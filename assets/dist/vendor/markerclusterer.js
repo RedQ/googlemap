@@ -50,7 +50,7 @@
  *                           cluster before the markers are hidden and a count
  *                           is shown.
  *     'ignoreHiddenMarkers': (boolean) Whether to ignore markers that are not
- *                            visible or count and cluster them anyway 
+ *                            visible or count and cluster them anyway
  *     'styles': (object) An object that has style properties:
  *       'url': (string) The image url.
  *       'height': (number) The image height.
@@ -112,7 +112,7 @@ function MarkerClusterer(map, opt_markers, opt_options) {
 
     /**
      * @private
-     * @type {string} Set a default Cluster Class 
+     * @type {string} Set a default Cluster Class
      */
     this.cssDefaultClass_ = 'cluster';
 
@@ -403,9 +403,9 @@ MarkerClusterer.prototype.getMaxZoom = function() {
 
 /**
  * Gets marker's cluster object based on given marker
- * 
+ *
  * @param  {google.maps.Marker} marker
- * 
+ *
  * @return {Cluster}
  */
 MarkerClusterer.prototype.getMarkersCluster = function(marker) {

@@ -38,6 +38,7 @@ class Load_Google_Map {
 		$this->load_google_map_autoload();
     add_action('admin_enqueue_scripts', array( $this , 'load_google_map_enqueue_admin_script' ));
     add_action('wp_enqueue_scripts', array( $this , 'load_google_map_enqueue_script' ));
+		add_filter('script_loader_tag', array($this, 'load_google_map_add_custom_attribute' ), 10, 2);
 	}
 
 	public function load_google_map_bootstrap() {
@@ -46,7 +47,7 @@ class Load_Google_Map {
 		define( 'LGM_FILE', dirname(__FILE__));
 		define( 'LGM_CSS', LGM_URL.'/assets/dist/css/' );
 		define( 'LGM_JS',  LGM_URL.'/assets/dist/js/' );
-		define( 'LGM_JS_VENDOR',  LGM_URL.'/assets/dist/ven/' );
+		define( 'LGM_JS_VENDOR',  LGM_URL.'/assets/dist/vendor/' );
 		define( 'LGM_IMG',  LGM_URL.'/assets/dist/vendor/img/');
 		define( 'LGM_INCLUDE' , LGM_DIR.'/includes/' );
 		define( 'LGM_TEMPLATE_PATH', plugin_dir_path( __FILE__ ) . 'templates/' );
@@ -106,6 +107,21 @@ class Load_Google_Map {
 			}
 		}
 	}
+
+	public function load_google_map_add_custom_attribute($tag, $handle) {
+		$custom_scripts = [
+			'google-map-api',
+			'lgm-rich-marker',
+			'lgm-map-marker-cluster',
+			'lgm-js-info-bubble',
+		];
+    foreach($custom_scripts as $script) {
+       if ($script === $handle) {
+          return str_replace(' src', ' defer async src', $tag);
+       }
+    }
+    return $tag;
+  }
 
 	public function load_google_map_autoload() {
 		require_once(LGM_INCLUDE.'lgm-admin-menu.php');
