@@ -22,7 +22,7 @@ const fileNames = ['googleMapSettings'];
 const entries = {};
 
 fileNames.forEach((fileName) => {
-  entries[`re_${fileName}`] =  `${paths.appSrc}/${fileName}.js`;
+  entries[`lgm_${fileName}`] =  `${paths.appSrc}/${fileName}.js`;
 });
 
 

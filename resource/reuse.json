@@ -1,120 +1,15 @@
 {
-  "openinghour": {
-    "js": "openinghour.d714cd.chunk.js"
-  },
-  "iconpicker": {
-    "js": "iconpicker.4ce6a4.chunk.js"
-  },
-  "timeperiod": {
-    "js": "timeperiod.62d5fc.chunk.js"
-  },
-  "sort": {
-    "js": "sort.20930d.chunk.js"
-  },
-  "comboselect": {
-    "js": "comboselect.550e29.chunk.js"
-  },
   "select": {
     "js": "select.b8e2cf.chunk.js"
-  },
-  "selectbox": {
-    "js": "selectbox.4b6193.chunk.js"
-  },
-  "datepicker": {
-    "js": "datepicker.6cc742.chunk.js"
-  },
-  "datepickerrange": {
-    "js": "datepickerrange.21cb14.chunk.js"
-  },
-  "redrag": {
-    "js": "redrag.e8f1cb.chunk.js"
-  },
-  "password": {
-    "js": "password.fb92f1.chunk.js"
-  },
-  "recaptcha": {
-    "js": "recaptcha.ce3a64.chunk.js"
-  },
-  "geobox": {
-    "js": "geobox.77a086.chunk.js"
-  },
-  "tags": {
-    "js": "tags.24cf43.chunk.js"
-  },
-  "mapautocomplete": {
-    "js": "mapautocomplete.8aa5b5.chunk.js"
-  },
-  "pagination": {
-    "js": "pagination.1b284b.chunk.js"
-  },
-  "slideralt": {
-    "js": "slideralt.90889b.chunk.js"
-  },
-  "selectgroup": {
-    "js": "selectgroup.5f47e9.chunk.js"
-  },
-  "rating": {
-    "js": "rating.828c49.chunk.js"
-  },
-  "countdown": {
-    "js": "countdown.3ecc1b.chunk.js"
-  },
-  "switchalt": {
-    "js": "switchalt.273ad5.chunk.js"
-  },
-  "textarea": {
-    "js": "textarea.a45edb.chunk.js"
-  },
-  "imageupload": {
-    "js": "imageupload.816ee4.chunk.js"
-  },
-  "fileupload": {
-    "js": "fileupload.ef103d.chunk.js"
-  },
-  "combobox": {
-    "js": "combobox.8e0898.chunk.js"
   },
   "text": {
     "js": "text.1139ff.chunk.js"
   },
-  "slider": {
-    "js": "slider.44ea18.chunk.js"
-  },
-  "text-repeat": {
-    "js": "text-repeat.d51a7d.chunk.js"
-  },
-  "radio": {
-    "js": "radio.8c4e26.chunk.js"
-  },
-  "minmaxbutton": {
-    "js": "minmaxbutton.34c03e.chunk.js"
-  },
-  "imageuploadalt": {
-    "js": "imageuploadalt.5e74f9.chunk.js"
-  },
-  "iconselect": {
-    "js": "iconselect.c58936.chunk.js"
-  },
-  "colorpicker": {
-    "js": "colorpicker.32d132.chunk.js"
-  },
-  "checkbox": {
-    "js": "checkbox.27c216.chunk.js"
-  },
-  "label": {
-    "js": "label.a7a460.chunk.js"
-  },
-  "atag": {
-    "js": "atag.fe16c7.chunk.js"
-  },
   "compoundbutton": {
     "js": "compoundbutton.24c555.chunk.js"
   },
-  "blank": {
-    "js": "blank.65b8e7.chunk.js"
-  },
   "reuse": {
-    "js": "reuse.66372e.js",
+    "js": "reuse.baa4c4.js",
     "css": "../../css/reuse-form-two.css"
   },
   "vendor": {
