@@ -38,7 +38,7 @@ class Load_Google_Map {
 		$this->load_google_map_autoload();
     add_action('admin_enqueue_scripts', array( $this , 'load_google_map_enqueue_admin_script' ));
     add_action('wp_enqueue_scripts', array( $this , 'load_google_map_enqueue_script' ));
-		add_filter('script_loader_tag', array($this, 'load_google_map_add_custom_attribute' ), 10, 2);
+		// add_filter('script_loader_tag', array($this, 'load_google_map_add_custom_attribute' ), 10, 2);
 	}
 
 	public function load_google_map_bootstrap() {

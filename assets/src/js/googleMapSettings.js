@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { http } from './utility/helper';
 
 const ReuseForm = __REUSEFORM__;
+const Loader = __REUSEFORM_COMPONENT__['ReLoader'];
 const fields = [
   {
     'id': 'enable_google_map',
@@ -77,6 +78,7 @@ export default class GoogleMapSettings extends Component {
     }
     this.state = {
       preValue,
+      loading: 'false',
     };
   }
   render() {
@@ -95,12 +97,14 @@ export default class GoogleMapSettings extends Component {
     };
     const saveGoogleMapSettings = (formData) => {
       let data = {};
+      const self = this;
+      self.setState({loading: 'true'});
       data.mapSettings = formData.data ? JSON.stringify(formData.data) : '';
       data.action_type = 'save_google_map_settings';
       http
        .post(data)
        .end((err, res) => {
-
+          self.setState({loading: 'false'});
        });
     }
     const reuseFormOption = {
@@ -112,6 +116,7 @@ export default class GoogleMapSettings extends Component {
       preValue,
     };
     return (<div>
+      {this.state.loading === 'true' ? <Loader /> : ''}
       <ReuseForm {...reuseFormOption} />
     </div>);
   }
