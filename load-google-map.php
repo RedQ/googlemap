@@ -56,15 +56,20 @@ class Load_Google_Map {
 	public function load_google_map_enqueue_admin_script(){
 		$current_scripts = $this->load_google_map_current_screen();
 		if($current_scripts === 'toplevel_page_load_google_map'){
+			wp_register_script( 'react', LGM_JS_VENDOR.'react.min.js', array(), $ver = true, true);
+	    wp_enqueue_script( 'react' );
+	    wp_register_script( 'react-dom', LGM_JS_VENDOR.'react-dom.min.js', array(), $ver = true, true);
+	    wp_enqueue_script( 'react-dom' );
+			$this->load_google_map_reuse_form_scripts();
 			$load_google_map_backend_scripts = json_decode(file_get_contents( LGM_DIR . "/resource/admin-assets.json"),true);
 	    foreach ($load_google_map_backend_scripts as $filename => $file) {
-	        wp_register_script( $filename, LGM_JS. $file['js'] , array('jquery', 'underscore'), $ver = false, true);
-	        wp_enqueue_script( $filename );
-	          wp_localize_script($filename, 'GOOGLE_MAP_AJAX_DATA', array(
-	            'action'    => 'load_google_map_ajax',
-	      			'nonce'     => wp_create_nonce('load_google_map_nonce'),
-	      			'admin_url' => admin_url( 'admin-ajax.php' ),
-	          ));
+        wp_register_script( $filename, LGM_JS. $file['js'] , array('jquery', 'underscore'), $ver = false, true);
+        wp_enqueue_script( $filename );
+        wp_localize_script($filename, 'GOOGLE_MAP_AJAX_DATA', array(
+          'action'    => 'load_google_map_ajax',
+    			'nonce'     => wp_create_nonce('load_google_map_nonce'),
+    			'admin_url' => admin_url( 'admin-ajax.php' ),
+        ));
 	    }
 		}
 
@@ -81,6 +86,20 @@ class Load_Google_Map {
 	}
 	public function load_google_map_enqueue_script(){
 		$this->load_google_map_scripts();
+	}
+
+	public function load_google_map_reuse_form_scripts(){
+		if ( !is_plugin_active( 'redq-reuse-form/redq-reuse-form.php' ) ) {
+			require_once(LGM_INCLUDE.'class-lgm-reuse-form.php');
+			wp_register_script( 'reuse-form-variable', LGM_JS_VENDOR.'reuse-form-variable.js', array(), $ver = true, true);
+			wp_enqueue_script( 'reuse-form-variable' );
+			wp_register_style('reuse-form-two', LGM_CSS.'reuse-form-two.css', array(), $ver = false, $media = 'all');
+			wp_enqueue_style('reuse-form-two');
+			wp_register_style('reuse-form', LGM_CSS.'reuse-form.css', array(), $ver = false, $media = 'all');
+			wp_enqueue_style('reuse-form');
+			$reuse_form_scripts = new Reuse_Builder_Reuse;
+			$reuse_form_scripts->load(LGM_JS);
+		}
 	}
 
 	public function load_google_map_scripts(){

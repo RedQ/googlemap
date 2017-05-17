@@ -68,18 +68,9 @@ module.exports = function() {
     resolve: {
       modules: [paths.appSrc,`${paths.appSrc}/frontend` , 'node_modules'],
     },
-    externals: {
-      // Use external version of React
-      "react": "React",
-      "react-dom": "ReactDOM"
-    },
     plugins: [
       // new webpack.IgnorePlugin(/(locale)/, /node_modules.+(momentjs)/),
       new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr|hu/),
-      new webpack.ProvidePlugin({
-        React: "React", react: "React", "window.react": "React", "window.React": "React",
-        ReactDOM: "ReactDOM", "window.react-dom": "ReactDOM", "window.ReactDOM": "ReactDOM",
-      }),
       new ReWebpackPlugin(),
       // extractCSS,
       // extractLESS,
