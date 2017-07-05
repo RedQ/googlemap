@@ -3046,6 +3046,7 @@ ul {
   content: "\f30c";
 }
 
+/*
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3057,6 +3058,7 @@ ul {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+*/
 /* Place Holder CSS
 ::-webkit-input-placeholder {
     color: @rq-rub-text-color-normal;
