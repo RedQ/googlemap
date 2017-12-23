@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Load Google Map
- * Plugin URI: http://redq.io/load-google-map
+ * Plugin URI: https://github.com/RedQ/googlemap
  * Description: A Simple plugin for loading google map scripts
  * Version: 1.0.0
  * Author: redqteam
