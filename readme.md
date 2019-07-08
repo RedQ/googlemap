@@ -1,4 +1,2 @@
-```
-google map api key: AIzaSyBF0FPDHlurGkDKua7PfZjpD2fr2rQsRw0
-
-```
+# Load google map
+Load google map api key in any wordpress site.
