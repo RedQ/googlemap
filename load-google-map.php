@@ -3,7 +3,7 @@
  * Plugin Name: Load Google Map
  * Plugin URI: https://github.com/RedQ/googlemap
  * Description: A Simple plugin for loading google map scripts
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: redqteam
  * Author URI: http://redq.io
  * Requires at least: 4.7
