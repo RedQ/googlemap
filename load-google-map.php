@@ -41,7 +41,7 @@ class Load_Google_Map
 		$this->load_google_map_autoload();
 		add_action('admin_enqueue_scripts', array($this, 'load_google_map_enqueue_admin_script'));
 		add_action('wp_enqueue_scripts', array($this, 'load_google_map_enqueue_script'));
-		add_filter('script_loader_tag', array($this, 'load_google_map_add_custom_attribute'), 10, 3);
+		// add_filter('script_loader_tag', array($this, 'load_google_map_add_custom_attribute'), 10, 3);
 	}
 
 	public function load_google_map_bootstrap()
@@ -75,7 +75,7 @@ class Load_Google_Map
 		if (isset($googlemap_settings)) {
 			$map_api_key = isset($googlemap_settings['googlemap_api_key']) ? $googlemap_settings['googlemap_api_key'] : '';
 			if (isset($googlemap_settings['googlemap_enable']) && $googlemap_settings['googlemap_enable'] === 'enable' && isset($googlemap_settings['googlemap_api_key']) && $googlemap_settings['googlemap_api_key'] !== '') {
-				wp_register_script('google-map-api', '//maps.googleapis.com/maps/api/js?key=' . $googlemap_settings['googlemap_api_key'] . '&libraries=places,geometry&language=en-US', true, false);
+				wp_register_script('google-map-api', '//maps.googleapis.com/maps/api/js?key=' . $googlemap_settings['googlemap_api_key'] . '&libraries=places,geometry&language=en-US', array('jquery', 'underscore'), true, false);
 				wp_enqueue_script('google-map-api');
 				if (isset($googlemap_settings['richmarker_enable']) && $googlemap_settings['richmarker_enable'] === 'enable') {
 					wp_register_script('lgm-rich-marker', LGM_JS_VENDOR . 'rich-marker.js', array('jquery', 'underscore'), $ver = true, true);
