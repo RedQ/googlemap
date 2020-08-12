@@ -7,7 +7,7 @@
  * Author: redqteam
  * Author URI: http://redq.io
  * Requires at least: 4.7
- * Tested up to: 4.7
+ * Tested up to: 5.5
  *
  * Text Domain: load-google-map
  * Domain Path: /languages/
